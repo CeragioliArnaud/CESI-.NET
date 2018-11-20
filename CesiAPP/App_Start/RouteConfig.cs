@@ -13,6 +13,16 @@ namespace CesiAPP
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //New version
+            routes.MapMvcAttributeRoutes();
+
+            // Old version
+            /* routes.MapRoute("MoviesByReleaseDate",
+                "movies/released/{year}/{month}", 
+                new { controller = "Movies", action = "ByReleaseDate" },
+                new { year = @"2015|2016", month = @"\d{2}" });
+            */
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
